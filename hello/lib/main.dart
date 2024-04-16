@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Home Page'),
     );
   }
 }
@@ -43,9 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
               .inversePrimary,
           title: Text(widget.title),
         ),
-        body: const Column(children: [
-          Text("Hello world!"),
-        ])
+        body: const Center(
+          child: Text("Hello world!",
+          textAlign: TextAlign.center,
+          ),
+        )
     );
   }
 }
