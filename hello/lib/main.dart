@@ -60,12 +60,36 @@ class _HomeState extends State<Home> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomePage()));
+        },
         child: Icon(Icons.edit),
       ),
     );
   }
 }
+
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
+
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Welcome Page")),
+      body: Center(
+        child: Text("Welcome to Second Page"),
+      ),
+    );
+  }
+}
+
+
+
 
 
 
