@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Profile"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Column(
         children: [
@@ -29,9 +29,19 @@ class _HomeState extends State<Home> {
           // ),
           // Image(image: NetworkImage("https://th.bing.com/th?id=OIP.NfRlVuapZjQd2aaoNUTYRQHaHa&w=250&h=250&c=8&rs=1&qlt=30&o=6&pid=3.1&rm=2")),
           // Center(child: Image(image: AssetImage("assets/Profile.jpg"))),
-          CircleAvatar(
-            radius: 120,
-            backgroundImage: AssetImage("assets/Profile.jpg"),
+          Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: CircleAvatar(
+              radius: 120,
+              backgroundColor: Colors.deepOrangeAccent,
+              child: Padding(
+                padding: const EdgeInsets.all(8), // Border radius
+                child: CircleAvatar(
+                  radius: 110,
+                backgroundImage: AssetImage("assets/profile.jpg"),
+                ),
+              ),
+            ),
           ),
           // Container(
           //   height: 100,
@@ -41,8 +51,11 @@ class _HomeState extends State<Home> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.account_circle),
-              Text("Subhikshaa"),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Icon(Icons.account_circle, color: Colors.deepOrangeAccent, size: 50,),
+              ),
+              Text("Subhikshaa", style: TextStyle(fontSize: 25),),
             ],
           ),
           // Container(
@@ -53,8 +66,11 @@ class _HomeState extends State<Home> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.call),
-              Text("9999999999"),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Icon(Icons.call, color: Colors.deepOrangeAccent, size: 50,),
+              ),
+              Text("9999999999", style: TextStyle(fontSize: 25),),
             ],
           ),
         ],
@@ -63,7 +79,8 @@ class _HomeState extends State<Home> {
         onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomePage()));
         },
-        child: Icon(Icons.edit),
+        child: Icon(Icons.edit, color: Colors.white,),
+        backgroundColor: Colors.deepOrangeAccent,
       ),
     );
   }
@@ -80,7 +97,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Welcome Page")),
+      appBar: AppBar(title: Text("Welcome Page"), backgroundColor: Colors.deepOrangeAccent),
       body: Center(
         child: Text("Welcome to Second Page"),
       ),
